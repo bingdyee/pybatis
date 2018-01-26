@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-from tools.data_mapper import mapper
+from tools.pydbase import mapper
 
 
 class StockInfoMappper:
