@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mapper namespace="StockInfoMappper">
+    <insert id="insert_stock_map">
+        insert into tb_stock_info(stock_code, stock_name, stock_industry) values(?, ?, ?)
+    </insert>
+
+    <update id="update_stock_map">
+        update tb_stock_info set stock_code=1 where id=102130213
+    </update>
+
+    <delete id="delete_stock_map">
+        delete from tb_stock_info where id=100000
+    </delete>
+
+    <create id="create_stock_map">
+        CREATE TABLE 'tb_stock_info'(
+            'id' INTEGER PRIMARY KEY AUTOINCREMENT,
+            'stock_code' varchar(6) NOT NULL UNIQUE,
+            'stock_name' varchar(100) NOT NULL,
+            'stock_industry' VARCHAR(50) DEFAULT '未知')
+    </create>
+
+</mapper>
