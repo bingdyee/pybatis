@@ -4,7 +4,6 @@ import time
 import matplotlib.dates as mpd
 
 
-
 def date2num(sdate):
     tm = time.strptime(sdate, "%Y-%m-%d")
     year, month, day = tm[0:3]
@@ -27,6 +26,7 @@ def gain_quotes(prices):
         )
         data.append([prices[i], float(prices[i + 4])])
     return pr, data
+
 
 def draw_k_line(data):
     pass

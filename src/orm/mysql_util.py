@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
-from tools.connection import ConnectionPool
-from .common import Singleton
+from .connection import ConnectionPool
+from tools.common import Singleton
 
 
 @Singleton

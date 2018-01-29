@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <mapper namespace="StockInfoMappper">
+
     <insert id="insert_stock_map">
         insert into tb_stock_info(stock_code, stock_name, stock_industry) values(?, ?, ?)
     </insert>

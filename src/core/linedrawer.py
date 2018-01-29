@@ -6,10 +6,11 @@ import matplotlib.pyplot as plt
 import matplotlib.finance as mpf
 from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
 from .stkdata import StockRepository
-from tools.dbutil import DBUtils
+from orm.dbutil import DBUtils
 
 
-class Figure_Canvas(FigureCanvas):
+class FigureCanvas(FigureCanvas):
+
     def __init__(self, parent=None, path='../../resources/base_info', width=11, height=5, dpi=100):
         fig, ax = plt.subplots(figsize=(width, height), dpi=dpi)
         FigureCanvas.__init__(self, fig)
@@ -41,7 +42,7 @@ class Figure_Canvas(FigureCanvas):
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
-    figure = Figure_Canvas()
+    figure = FigureCanvas()
     figure.draw_k_line()
     figure.show()
     sys.exit(app.exec_())

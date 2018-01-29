@@ -3,8 +3,8 @@ import threading
 import contextlib
 from pymysql.connections import Connection
 from pymysql.cursors import DictCursor, Cursor
-from .pool import PoolContainer, PoolIsFullException, PoolIsEmptyException
-from .logger import Logger
+from orm.pool import PoolContainer, PoolIsFullException, PoolIsEmptyException
+from tools.logger import Logger
 
 logger = Logger()
 

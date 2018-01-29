@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 import threading
 from queue import Queue, Empty
-from .logger import Logger
+from tools.logger import Logger
 
 logger = Logger()
 

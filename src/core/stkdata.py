@@ -6,7 +6,7 @@ import matplotlib as mpl
 import matplotlib.dates as mpd
 import matplotlib.pyplot as plt
 import matplotlib.finance as mpf
-from tools.dbutil import DBUtils
+from orm.dbutil import DBUtils
 
 
 mpl.rcParams['font.sans-serif'] = ['SimHei']  # 用来正常显示中文标签
@@ -47,9 +47,9 @@ class StockRepository:
 
     def get_his_data(self, code=None, start='', end='', ktype='D',
                      autype='qfq', index=False, retry_count=3, pause=0.001):
-        '''
+        """
         获取历史数据(日K线)
-        '''
+        """
         data = ts.get_k_data(code=code, start=start, end=end, ktype=ktype, retry_count=retry_count, pause=pause,
                              index=index, autype=autype)
         arr_data = []
@@ -61,9 +61,9 @@ class StockRepository:
         return self._get_quotes(arr_data)
 
     def init_stock_basics(self):
-        '''
+        """
         获取基础股票信息
-        '''
+        """
         data = ts.get_stock_basics()
         for index, row in data.iterrows():
             dt = (index, str(row[self.BASE_INFO[0]]), row[self.BASE_INFO[1]])
@@ -119,9 +119,10 @@ def draw_kline_test(query):
     plt.show()
 
 
-repos = StockRepository('../../resources/base_info')
-data = repos.get_time_data(query['code'])
-for index, row in data.iterrows():
-    print(row['time'], row['price'])
+def test():
+    repos = StockRepository('../../resources/base_info')
+    data = repos.get_time_data(query['code'])
+    for index, row in data.iterrows():
+        print(row['time'], row['price'])
 
 

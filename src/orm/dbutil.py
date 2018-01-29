@@ -1,10 +1,12 @@
 # -*-coding:utf-8-*-
 import sqlite3
-from .common import Singleton
+from tools.common import Singleton
 
 
 @Singleton
 class DBUtils:
+
+    """For sqlite3"""
 
     def __init__(self, path=None):
         self.pools = {}
@@ -47,6 +49,13 @@ class DBUtils:
         self.pools[path] = conn
         self.cur_session = conn
 
+
+class MySQL:
+
+    """For MySQL"""
+
+    def __init__(self):
+        pass
 
 
 
