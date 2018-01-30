@@ -46,14 +46,13 @@ class ModelMetaclass(type):
         mapper = dict()
         for k, v in attrs.items():
             if isinstance(v, Field):
-                print(type(v))
                 mapper[k] = v
-        # 将类属性移除
+        # romove class's attrs
         for _ in mapper.keys():
             attrs.pop(_)
-        # 表名
+        # Table's name
         attrs['__table__'] = 'tb_' + name.lower()
-        # 保存属性和列的映射关系
+        # Mapper properties and column
         attrs['__mapper__'] = mapper
         return super(ModelMetaclass, mcs).__new__(mcs, name, bases, attrs)
 
