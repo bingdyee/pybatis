@@ -110,14 +110,13 @@ xmls = ["stock_map.xml"]
 db = EasyDB(path, xmls)
 
 
-def mapper(clz):
+def mapper(*args, **kargs):
     global db
 
     def decorator(func):
-        key = clz + '.' + func.__name__
-        node = db.mp.mappers.get(key)
+        node = db.mp.mappers.get(func.__qualname__)
         if not node:
-            raise XmlParsingError('No method mapper: <%s>' % key)
+            raise XmlParsingError('No method mapper: <%s>' % func.__qualname__)
 
         def _invoke(**margs):
             strSql = ''
@@ -143,7 +142,7 @@ def mapper(clz):
 
 class Mapper:
 
-    @mapper("Mapper")
+    @mapper(sql="select * from tb_stock_info")
     def selecTest(**kw): pass
 
 
