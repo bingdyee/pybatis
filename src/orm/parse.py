@@ -14,8 +14,8 @@
 import re
 from xml.dom.minidom import parse, Node
 import xml.dom.minidom
-from orm.dbutil import DBUtils
-from orm.model import *
+from .dbutil import DBUtils
+from .model import *
 
 
 class Constant:
@@ -140,13 +140,12 @@ def mapper(*args, **kargs):
     return decorator
 
 
-class Mapper:
+def test():
+    class Mapper:
 
-    @mapper(sql="select * from tb_stock_info")
-    def selecTest(**kw): pass
+        @mapper(sql="select * from tb_stock_info")
+        def selecTest(**kw): pass
 
-
-if __name__ == '__main__':
     class Stock(Model):
         id = Int('id')
         code = Varchar('code')
