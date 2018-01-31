@@ -48,5 +48,6 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
-
+    # main()
+    s = '1 == 1'
+    print(eval(s))

@@ -18,12 +18,12 @@ class Field(object):
 
     def __init__(self, name, column_type=None):
         self.name = name
-        if not column_type:
-            column_type = self.__getattribute__('default_type').upper()
-        else:
+        if column_type:
             column_type = column_type.upper()
             if not column_type.startswith(self.__getattribute__('default_type').upper()):
                 raise BadTypeError(column_type)
+        else:
+            column_type = self.__getattribute__('default_type').upper()
         self.column_type = column_type
 
     def __str__(self):
