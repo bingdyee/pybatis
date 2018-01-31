@@ -130,7 +130,7 @@ def mapper(*args, **kargs):
             for p in parms:
                 if not margs.get(p.strip()):
                     raise Exception('')
-                # 防止SQL注入
+                # prevent SQL injection
                 strSql = strSql.replace('#{' + p + '}', "?")
                 pas.append(margs.get(p.strip()))
             return db.exec(sql=strSql, data=tuple(pas))
