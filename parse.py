@@ -1,5 +1,9 @@
 # -*- coding:utf-8 -*-
-
+import re
+from xml.dom.minidom import parse, Node
+import xml.dom.minidom
+from dbutil import DBUtils
+from model import *
 
 """
 <sql id=''>
@@ -7,13 +11,6 @@
 <if/>
 <for/>
 """
-
-
-import re
-from xml.dom.minidom import parse, Node
-import xml.dom.minidom
-from dbutil import DBUtils
-from model import *
 
 
 class Constant:

@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 import xml.sax as dom
 from dbutil import DBUtils
-from common import Singleton
+from utils import Singleton
 
 
 class MapperHandler(dom.ContentHandler):

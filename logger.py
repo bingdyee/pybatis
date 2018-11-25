@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 import logging
 import logging.handlers
-from common import format_time, Singleton
+from utils import format_time, Singleton
 import os
 
 

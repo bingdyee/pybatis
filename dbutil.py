@@ -1,6 +1,6 @@
 # -*-coding:utf-8-*-
 import sqlite3
-from .common import Singleton
+from utils import Singleton
 
 
 @Singleton
