@@ -1,2 +1,1 @@
-# SingularPointAI
-Singular Point Of AI
+# mybatis implemented in python.
