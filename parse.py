@@ -1,21 +1,19 @@
 # -*- coding:utf-8 -*-
-"""
-@File      : parse.py
-@Software  : SingularAI
-@Time      : 2018/1/29 14:30
-@Author    : yubb
 
+
+"""
 <sql id=''>
 <include ref="sql"/>
 <if/>
 <for/>
-
 """
+
+
 import re
 from xml.dom.minidom import parse, Node
 import xml.dom.minidom
-from .dbutil import DBUtils
-from .model import *
+from dbutil import DBUtils
+from model import *
 
 
 class Constant:

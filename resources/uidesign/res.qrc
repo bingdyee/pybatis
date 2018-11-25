@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="img">
-    <file>res/LoginBG.jpg</file>
-    <file>res/banner.jpg</file>
-    <file>res/note.jpg</file>
-    <file>res/ban.jpg</file>
-  </qresource>
-</RCC>

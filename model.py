@@ -1,10 +1,4 @@
 # -*- coding:utf-8 -*-
-"""
-@File      : field.py
-@Software  : SingularAI
-@Time      : 2018/1/29 10:37
-@Author    : yubb
-"""
 
 
 class Field(object):
